@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Pesan Buat Kamu 💖</title>
+  <title>Pesan Buat Kamu 💕</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="center">
@@ -9,23 +9,23 @@
 <h2 id="msg"></h2>
 <button onclick="finish()">Final 🎁</button>
 
+<script src="js/effects.js"></script>
 <script>
-const name = localStorage.getItem("name");
-const text = `Terima kasih ${name}, sudah bikin hidup aku lebih berwarna 💕`;
+const name = localStorage.getItem("username");
+const text = `Terima kasih ${name}, kamu itu hadiah terindah buat aku 💖`;
 let i = 0;
 
-function type() {
-  if (i < text.length) {
+function type(){
+  if(i < text.length){
     msg.innerHTML += text[i++];
-    setTimeout(type, 70);
+    setTimeout(type,60);
   }
 }
 type();
 
-function finish() {
-  location.href = "final.html";
+function finish(){
+  location.href="final.html";
 }
 </script>
-
 </body>
 </html>
