@@ -1,54 +1,22 @@
-const screens = document.querySelectorAll('.screen');
-const music = document.getElementById('music');
+const text = "Terima kasih sudah jadi bagian terindah dalam hidupku 💖";
+let index = 0;
+const messageEl = document.getElementById("message");
 
-function nextScreen(n) {
-  screens.forEach(s => s.classList.remove('active'));
-  document.getElementById(`screen${n}`).classList.add('active');
-}
-
-function cekPuzzle1() {
-  if (jawab1.value.toLowerCase() === "mall") {
-    nextScreen(3);
-  } else {
-    err1.innerText = "Coba inget lagi 😉";
+function typeWriter() {
+  if (index < text.length) {
+    messageEl.innerHTML += text.charAt(index);
+    index++;
+    setTimeout(typeWriter, 80);
   }
 }
 
-function cekPuzzle2() {
-  if (jawab2.value === "1203") {
-    nextScreen(4);
-    startCountdown();
-  } else {
-    err2.innerText = "Salah 😆";
-  }
-}
+typeWriter();
 
-function startCountdown() {
-  let c = 3;
-  const cd = document.getElementById('countdown');
-  const timer = setInterval(() => {
-    cd.innerText = c;
-    c--;
-    if (c < 0) {
-      clearInterval(timer);
-      nextScreen(5);
-      music.play();
-      startTyping();
-    }
-  }, 1000);
-}
+// Music play (wajib klik karena aturan browser)
+const btn = document.getElementById("playBtn");
+const music = document.getElementById("bgMusic");
 
-function startTyping() {
-  const text = "Semoga hari ini penuh senyum, tawa, dan rasa dicintai 🤍";
-  let i = 0;
-  const el = document.getElementById('typing');
-  const t = setInterval(() => {
-    el.innerHTML += text[i];
-    i++;
-    if (i >= text.length) clearInterval(t);
-  }, 60);
-}
-
-function showFinal() {
-  nextScreen(6);
-}
+btn.addEventListener("click", () => {
+  music.play();
+  btn.style.display = "none";
+});
