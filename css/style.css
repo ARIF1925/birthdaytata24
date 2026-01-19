@@ -16,26 +16,14 @@ body{
 
 input,button{
   padding:12px 20px;
+  margin:10px;
   border:none;
   border-radius:20px;
-  margin:10px;
 }
 
-.gallery img{
-  width:150px;
-  margin:10px;
-  border-radius:15px;
-  animation:zoom 1s forwards;
-}
+button{cursor:pointer}
 
-@keyframes zoom{
-  from{opacity:0;transform:scale(.7)}
-  to{opacity:1;transform:scale(1)}
-}
-
-.shake{
-  animation:shake .4s;
-}
+.shake{animation:shake .4s}
 @keyframes shake{
   0%{transform:translateX(0)}
   25%{transform:translateX(-6px)}
@@ -43,25 +31,20 @@ input,button{
   75%{transform:translateX(-6px)}
 }
 
-/* effects */
-.confetti{
-  position:fixed;
-  top:-10px;
-  width:10px;
-  height:10px;
-  background:yellow;
-  animation:fall 3s linear infinite;
-}
-@keyframes fall{
-  to{transform:translateY(110vh) rotate(360deg)}
+.map{
+  display:flex;
+  gap:30px;
+  font-size:40px;
 }
 
-.heart{
-  position:fixed;
-  bottom:0;
-  font-size:24px;
-  animation:float 4s forwards;
+.chat{
+  padding:20px;
 }
-@keyframes float{
-  to{transform:translateY(-110vh);opacity:0}
-}
+
+.me{background:#ff6f91;margin:8px;padding:10px;border-radius:15px}
+.you{background:#ffc75f;margin:8px;padding:10px;border-radius:15px}
+
+.delay1{animation:fade 1s forwards 1s;opacity:0}
+.delay2{animation:fade 1s forwards 2s;opacity:0}
+.delay3{animation:fade 1s forwards 3s;opacity:0}
+@keyframes fade{to{opacity:1}}
