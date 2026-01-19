@@ -1,0 +1,55 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg,#ff9a9e,#fad0c4);
+  color: white;
+  text-align: center;
+}
+
+.screen {
+  display: none;
+  height: 100vh;
+  padding: 40px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.screen.active {
+  display: flex;
+}
+
+button {
+  padding: 12px 25px;
+  border-radius: 25px;
+  border: none;
+  background: #ff6f91;
+  color: white;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+input {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  margin-top: 10px;
+}
+
+.slider img {
+  width: 250px;
+  border-radius: 20px;
+  animation: fade 6s infinite;
+}
+
+@keyframes fade {
+  0% {opacity:0;}
+  20% {opacity:1;}
+  80% {opacity:1;}
+  100% {opacity:0;}
+}
+
+#typing {
+  margin-top: 20px;
+  font-size: 18px;
+}
