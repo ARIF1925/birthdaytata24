@@ -1,9 +1,67 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-  <title>Hello</title>
+<meta charset="UTF-8">
+<title>For You ❤️</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>GitHub Pages aktif 🚀</h1>
+
+<audio id="music" src="music.mp3" loop></audio>
+
+<!-- SCREEN 1 -->
+<div class="screen active" id="screen1">
+  <h1>Hai kamu 🤍</h1>
+  <p>Ini bukan web biasa.</p>
+  <button onclick="nextScreen(2)">Lanjut</button>
+</div>
+
+<!-- SCREEN 2 - PUZZLE 1 -->
+<div class="screen" id="screen2">
+  <h2>Puzzle Pertama 🔐</h2>
+  <p>Kita pertama kali jalan bareng ke mana?</p>
+  <input id="jawab1" placeholder="Jawaban...">
+  <button onclick="cekPuzzle1()">Jawab</button>
+  <p id="err1"></p>
+</div>
+
+<!-- SCREEN 3 - PUZZLE 2 -->
+<div class="screen" id="screen3">
+  <h2>Puzzle Kedua 🔢</h2>
+  <p>Tanggal jadian kita?</p>
+  <input id="jawab2" placeholder="Contoh: 1203">
+  <button onclick="cekPuzzle2()">Buka Hadiah 🎁</button>
+  <p id="err2"></p>
+</div>
+
+<!-- SCREEN 4 - TRANSISI -->
+<div class="screen" id="screen4">
+  <h2>Hadiah sedang dibuka...</h2>
+  <div id="countdown">3</div>
+</div>
+
+<!-- SCREEN 5 - MAIN -->
+<div class="screen" id="screen5">
+  <div class="slider">
+    <img src="foto1.jpg">
+    <img src="foto2.jpg">
+    <img src="foto3.jpg">
+  </div>
+
+  <div id="typing"></div>
+
+  <button onclick="showFinal()">Baca Pesan Terakhir 💌</button>
+</div>
+
+<!-- SCREEN 6 - FINAL -->
+<div class="screen" id="screen6">
+  <h1>Selamat Ulang Tahun 🤍</h1>
+  <p>
+    Terima kasih sudah hadir, bertahan, dan tumbuh bareng aku.  
+    Aku nggak janji sempurna, tapi aku janji selalu usaha.
+  </p>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
