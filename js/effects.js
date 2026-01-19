@@ -32,3 +32,16 @@ setInterval(()=>{
   document.body.appendChild(h);
   setTimeout(()=>h.remove(),4000);
 },700);
+
+function confettiBoom() {
+  for (let i = 0; i < 80; i++) {
+    const c = document.createElement("div");
+    c.className = "confetti";
+    c.style.left = Math.random() * 100 + "vw";
+    c.style.background = ["#ff4d6d","#ffd93d","#6bcfff","#a66cff"][Math.floor(Math.random()*4)];
+    c.style.animationDuration = (Math.random()*2+1)+"s";
+    document.body.appendChild(c);
+
+    setTimeout(()=>c.remove(),3000);
+  }
+}
