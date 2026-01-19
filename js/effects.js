@@ -24,3 +24,9 @@ function heartFloat(){
   document.body.appendChild(h);
   setTimeout(()=>h.remove(),4000);
 }
+@keyframes fall{
+  to{transform:translateY(110vh) rotate(360deg)}
+}
+@keyframes float{
+  to{transform:translateY(-110vh);opacity:0}
+}
