@@ -2,9 +2,14 @@ const chat = document.getElementById("chat");
 const status = document.getElementById("status");
 const bgm = document.getElementById("bgm");
 const ringtone = document.getElementById("ringtone");
+const msg = document.getElementById("msg");
+
 
 let step = 0;
 let musicStarted = false;
+<audio id="bgm" src="assets/music.mp3" loop></audio>
+<audio id="ringtone" src="assets/ringtone.mp3"></audio>
+
 
 function bot(text) {
   const d = document.createElement("div");
