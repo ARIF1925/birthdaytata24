@@ -1,0 +1,21 @@
+<h2 id="question"></h2>
+<input id="answer" />
+<button onclick="check()">Jawab!</button>
+
+<script>
+const q = "Apa nama panggilan kamu dari aku?";
+const correct = "ayang";
+
+document.getElementById("question").innerText = q;
+
+function check(){
+  const a = document.getElementById("answer").value.toLowerCase();
+  if(a === correct){
+    document.body.classList.add("success");
+    setTimeout(()=>location.href="gallery.html",1200);
+  } else {
+    document.body.classList.add("shake");
+    setTimeout(()=>document.body.classList.remove("shake"),500);
+  }
+}
+</script>
