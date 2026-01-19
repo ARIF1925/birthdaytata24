@@ -1,19 +1,24 @@
-// floating hearts
-setInterval(()=>{
-  const h=document.createElement("div");
-  h.innerText="💖";
-  h.style.position="fixed";
-  h.style.left=Math.random()*100+"vw";
-  h.style.bottom="0";
-  h.style.fontSize="24px";
-  h.style.animation="float 4s linear";
-  document.body.appendChild(h);
-  setTimeout(()=>h.remove(),4000);
-},800);
+const text = `
+Aku nggak pernah nyangka,
+ada seseorang yang bisa bikin aku setenang ini.
 
-const style=document.createElement("style");
-style.innerHTML=`
-@keyframes float {
-  to {transform:translateY(-100vh); opacity:0;}
-}`;
-document.head.appendChild(style);
+Terima kasih sudah bertahan,
+sudah sabar,
+dan sudah memilih aku.
+
+Aku harap kita terus bareng,
+pelan-pelan,
+sampai nanti. 💖
+`;
+
+let i = 0;
+const el = document.getElementById("text");
+
+function type() {
+  if (i < text.length) {
+    el.innerHTML += text[i] === "\n" ? "<br>" : text[i];
+    i++;
+    setTimeout(type,40);
+  }
+}
+type();
