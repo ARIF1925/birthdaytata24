@@ -6,12 +6,16 @@
 </head>
 <body class="center">
 
-<h1>🎉 Happy Birthday 🎉</h1>
-<h2 id="finalName"></h2>
+<h1>🎉 HAPPY BIRTHDAY 🎉</h1>
+<h2 id="name"></h2>
 
+<script src="js/effects.js"></script>
 <script>
-document.getElementById("finalName").innerText =
-  localStorage.getItem("name") + " 💖";
+document.getElementById("name").innerText =
+  localStorage.getItem("username") + " 💖";
+
+confettiBoom();
+setInterval(heartFloat,600);
 </script>
 
 </body>
