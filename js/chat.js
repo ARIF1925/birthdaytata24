@@ -1,33 +1,40 @@
 const chat = document.getElementById("chat");
 let step = 0;
 
-function add(text, type="bot") {
+function bot(text) {
   const d = document.createElement("div");
-  d.className = "msg " + type;
+  d.className = "msg bot fade";
   d.innerText = text;
   chat.appendChild(d);
   chat.scrollTop = chat.scrollHeight;
 }
 
-add("Hai ayang 💛");
-add("Tanggal jadian kita?");
+function user(text) {
+  const d = document.createElement("div");
+  d.className = "msg user fade";
+  d.innerText = text;
+  chat.appendChild(d);
+}
+
+bot("Hai ayang 💛");
+bot("Tanggal jadian kita?");
 
 function send() {
   const v = msg.value.toLowerCase();
-  add(msg.value,"user");
+  user(msg.value);
   msg.value="";
 
   if (step===0 && v==="0506") {
     step++;
-    add("Inget dong 😭");
-    add("Warna favorit kamu?");
+    setTimeout(()=>bot("Aku seneng kamu inget 🥺"),500);
+    setTimeout(()=>bot("Warna favorit kamu?"),1200);
     return;
   }
 
   if (step===1 && ["kuning","biru","merah"].includes(v)) {
-    window.location.href="final.html";
+    location.href="final.html";
     return;
   }
 
-  add("Hmm salah 😆");
+  bot("Hehe salah 😆");
 }
