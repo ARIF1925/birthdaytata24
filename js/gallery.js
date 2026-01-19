@@ -1,3 +1,4 @@
-function next() {
-  location.href = "message.html";
+function next(){
+  confettiBoom();
+  setTimeout(()=>location.href="message.html",800);
 }
