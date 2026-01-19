@@ -1,21 +1,21 @@
+const text = "Hai kamu yang aku sayang 💖";
+let i = 0;
+const typing = document.getElementById("typing");
 const bgm = document.getElementById("bgm");
 
-if (localStorage.getItem("music") === "on") {
-  bgm.currentTime = localStorage.getItem("time") || 0;
-  bgm.play();
+function type() {
+  if (i < text.length) {
+    typing.innerHTML += text[i];
+    i++;
+    setTimeout(type,70);
+  }
 }
+type();
 
-setInterval(() => {
-  localStorage.setItem("time", bgm.currentTime);
-}, 1000);
+startBtn.onclick = () => {
+  if (!nameInput.value) return alert("Nama dulu dong 😆");
 
-document.getElementById("startBtn").onclick = () => {
-  const name = nameInput.value.trim();
-  if (!name) return alert("Nama dulu dong 😆");
-
-  localStorage.setItem("nama", name);
-  localStorage.setItem("music", "on");
-
-  bgm.play();
-  location.href = "memory.html";
+  bgm.play(); // FIX autoplay
+  localStorage.setItem("music","on");
+  location.href="memory.html";
 };
