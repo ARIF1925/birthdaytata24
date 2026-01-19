@@ -1,16 +1,10 @@
-function start(){
-  const name = document.getElementById("nameInput").value.trim();
-  if(!name) return alert("Nama jangan kosong 😝");
-
-  localStorage.setItem("username", name);
-
-  const music = document.getElementById("music");
-  music.play().then(() => {
-    setTimeout(() => {
-      location.href = "puzzle.html";
-    }, 700);
-  }).catch(err => {
-    console.log("Autoplay blocked:", err);
-    location.href = "puzzle.html";
-  });
+function startQuest(){
+  const val = document.getElementById("nameInput").value.trim().toLowerCase();
+  if(val !== "ayang"){
+    alert("Hmm… kayaknya bukan itu 😝");
+    return;
+  }
+  localStorage.setItem("nickname","Ayang");
+  document.getElementById("music").play();
+  setTimeout(()=>location.href="memory.html",700);
 }
