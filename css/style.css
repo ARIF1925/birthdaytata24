@@ -80,3 +80,83 @@
   backdrop-filter:blur(6px);
 }
 
+/* ===== WHATSAPP STYLE ===== */
+
+.wa-body {
+  background:#0b141a;
+}
+
+.wa-app {
+  max-width:420px;
+  height:100vh;
+  margin:auto;
+  background:#e5ddd5;
+  display:flex;
+  flex-direction:column;
+}
+
+.wa-header {
+  background:#075e54;
+  color:white;
+  padding:10px;
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+
+.wa-header img {
+  width:40px;
+  height:40px;
+  border-radius:50%;
+}
+
+.wa-name {
+  font-weight:bold;
+}
+
+.wa-status {
+  font-size:12px;
+  opacity:0.8;
+}
+
+.wa-chat {
+  flex:1;
+  padding:10px;
+  overflow-y:auto;
+}
+
+.bubble {
+  padding:8px 12px;
+  border-radius:8px;
+  margin:6px 0;
+  max-width:70%;
+  font-size:14px;
+}
+
+.bot {
+  background:white;
+}
+
+.user {
+  background:#dcf8c6;
+  margin-left:auto;
+}
+
+.wa-input {
+  display:flex;
+  padding:8px;
+  background:white;
+}
+
+.wa-input input {
+  flex:1;
+  padding:8px;
+}
+
+.wa-input button {
+  background:#25d366;
+  border:none;
+  color:white;
+  padding:10px;
+}
+
