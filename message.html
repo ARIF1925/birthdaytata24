@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pesan Buat Kamu 💖</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="center">
+
+<h2 id="msg"></h2>
+<button onclick="finish()">Final 🎁</button>
+
+<script>
+const name = localStorage.getItem("name");
+const text = `Terima kasih ${name}, sudah bikin hidup aku lebih berwarna 💕`;
+let i = 0;
+
+function type() {
+  if (i < text.length) {
+    msg.innerHTML += text[i++];
+    setTimeout(type, 70);
+  }
+}
+type();
+
+function finish() {
+  location.href = "final.html";
+}
+</script>
+
+</body>
+</html>
