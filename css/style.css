@@ -1,55 +1,45 @@
-.wa-body {
-  background:#0b141a;
+.intro {
+  height:100vh;
+  background:linear-gradient(270deg,#ff9a9e,#fad0c4,#ffd1ff);
+  background-size:600% 600%;
+  animation:bgMove 12s ease infinite;
 }
 
-.wa-app {
-  max-width:420px;
+@keyframes bgMove {
+  0%{background-position:0%}
+  50%{background-position:100%}
+  100%{background-position:0%}
+}
+
+.intro-wrapper {
   height:100vh;
-  margin:auto;
-  background:#e5ddd5;
   display:flex;
   flex-direction:column;
-}
-
-.wa-header {
-  background:#075e54;
-  color:white;
-  padding:10px;
-  display:flex;
-  gap:10px;
+  justify-content:center;
   align-items:center;
+  text-align:center;
+  gap:14px;
 }
 
-.wa-header img {
-  width:40px;
-  height:40px;
-  border-radius:50%;
+.pixel {
+  width:80px;
 }
 
-.wa-chat {
-  flex:1;
-  padding:10px;
-  overflow-y:auto;
+.floating {
+  animation:float 3s ease-in-out infinite;
 }
 
-.bubble {
-  padding:8px 12px;
-  border-radius:8px;
-  margin:6px 0;
-  max-width:70%;
-  font-size:14px;
+@keyframes float {
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-15px)}
 }
 
-.bot {
-  background:white;
+.glow {
+  animation:pulse 1.5s infinite;
 }
 
-.user {
-  background:#dcf8c6;
-  margin-left:auto;
-}
-
-.typing {
-  font-size:12px;
-  color:gray;
+@keyframes pulse {
+  0%{box-shadow:0 0 0 #ff7aa2}
+  70%{box-shadow:0 0 25px #ff7aa2}
+  100%{box-shadow:0 0 0}
 }
