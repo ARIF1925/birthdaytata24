@@ -1,50 +1,41 @@
-body{
-  margin:0;
-  font-family:Poppins,sans-serif;
-  background:linear-gradient(135deg,#ff9a9e,#fad0c4);
-  color:white;
-  text-align:center;
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
-.center{
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  height:100vh;
+body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
 }
 
-input,button{
-  padding:12px 20px;
-  margin:10px;
-  border:none;
-  border-radius:20px;
+/* background */
+.bg {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(120deg, pink, lavender);
+  z-index: 1;
 }
 
-button{cursor:pointer}
-
-.shake{animation:shake .4s}
-@keyframes shake{
-  0%{transform:translateX(0)}
-  25%{transform:translateX(-6px)}
-  50%{transform:translateX(6px)}
-  75%{transform:translateX(-6px)}
+/* konten */
+.container {
+  position: relative;
+  z-index: 10; /* INI PENTING */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
 }
 
-.map{
-  display:flex;
-  gap:30px;
-  font-size:40px;
+input {
+  padding: 10px;
+  font-size: 16px;
 }
 
-.chat{
-  padding:20px;
+button {
+  padding: 12px 20px;
+  font-size: 16px;
+  cursor: pointer;
 }
-
-.me{background:#ff6f91;margin:8px;padding:10px;border-radius:15px}
-.you{background:#ffc75f;margin:8px;padding:10px;border-radius:15px}
-
-.delay1{animation:fade 1s forwards 1s;opacity:0}
-.delay2{animation:fade 1s forwards 2s;opacity:0}
-.delay3{animation:fade 1s forwards 3s;opacity:0}
-@keyframes fade{to{opacity:1}}
