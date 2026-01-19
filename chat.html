@@ -1,20 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Chat Kita 💚</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WhatsApp</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="wa-body">
 
-<div class="chatbox" id="chat"></div>
+<audio id="bgm" src="assets/music.mp3"></audio>
+<audio id="ringtone" src="assets/ringtone.mp3"></audio>
 
-<div class="inputBox">
-  <input id="msg" placeholder="Ketik jawaban...">
-  <button onclick="send()">➤</button>
+<div class="wa-app">
+  <div class="wa-header">
+    <img src="assets/avatar.jpg">
+    <div>
+      <div class="name">Ayang 💛</div>
+      <div class="status" id="status">online</div>
+    </div>
+  </div>
+
+  <div class="wa-chat" id="chat"></div>
+
+  <div class="wa-input">
+    <input id="msg" placeholder="Ketik pesan">
+    <button onclick="send()">➤</button>
+  </div>
 </div>
 
 <script src="js/chat.js"></script>
-<script src="js/effects.js"></script>
 </body>
 </html>
