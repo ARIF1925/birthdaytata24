@@ -2,29 +2,33 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Happy Birthday 💖</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Petualangan Dimulai 🎈</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="center">
 
-<div class="container">
-  <h1 id="title">🎉 Happy Birthday 🎉</h1>
+<h1>Masukin Nama Kamu 💕</h1>
 
-  <p id="message"></p>
+<input id="nameInput" placeholder="Nama kamu..." />
+<button onclick="start()">Mulai ✨</button>
 
-  <div class="gallery">
-    <img src="foto1.jpg" class="photo">
-    <img src="foto2.jpg" class="photo">
-    <img src="foto3.jpg" class="photo">
-  </div>
+<audio id="music" src="assets/music.mp3" loop></audio>
 
-  <button id="playBtn">▶ Play Music</button>
-</div>
+<script>
+function start(){
+  const name = document.getElementById("nameInput").value;
+  if(!name) return alert("Isi dulu dong 😝");
 
-<audio id="bgMusic" loop>
-  <source src="music.mp3" type="audio/mpeg">
-</audio>
+  localStorage.setItem("username", name);
 
-<script src="script.js"></script>
+  const music = document.getElementById("music");
+  music.play();
+
+  setTimeout(()=>{
+    window.location.href = "puzzle.html";
+  }, 800);
+}
+</script>
+
 </body>
 </html>
