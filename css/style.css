@@ -174,5 +174,15 @@
     transform: translateY(110vh) rotate(360deg);
     opacity: 0;
   }
+  
 }
+.fade {
+  animation: fadeIn 1s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
 
