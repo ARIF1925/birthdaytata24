@@ -1,52 +1,22 @@
 <!DOCTYPE html>
-<html lang="id">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pesan Buat Kamu 💕</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
+<body class="center fade">
 
-<body class="center">
+<h2 id="msg"></h2>
+<button onclick="finish()">Lanjut 🎁</button>
 
-  <h2 id="msg"></h2>
-  <button onclick="finish()" class="glow">Final 🎁</button>
+<script src="js/effects.js"></script>
+<script>
+const name = localStorage.getItem("username") || "sayangku";
+typeWriter("msg", `Terima kasih ${name}, kamu itu hadiah terindah buat aku 💖`, 60);
 
-  <script src="js/effects.js"></script>
-
-  <script>
-  document.addEventListener("DOMContentLoaded", function(){
-
-    const msgEl = document.getElementById("msg");
-    const name = localStorage.getItem("username") || "sayangku";
-
-    const text = `Terima kasih ${name}, kamu itu hadiah terindah buat aku 💖  
-Kehadiran kamu bikin hari-hari aku lebih berwarna, lebih hangat, dan lebih berarti.  
-Aku bersyukur banget bisa kenal kamu dan punya kenangan indah bareng kamu ✨`;
-
-    let i = 0;
-
-    function type(){
-      if(i < text.length){
-        msgEl.innerHTML += text.charAt(i);
-        i++;
-        setTimeout(type, 50);
-      } else {
-        confettiBoom(); // efek setelah selesai ngetik
-      }
-    }
-
-    type();
-
-    window.finish = function(){
-      document.body.style.opacity = "0";
-      setTimeout(() => {
-        window.location.href = "final.html";
-      }, 800);
-    }
-
-  });
-  </script>
-
+function finish(){
+  location.href="final.html";
+}
+</script>
 </body>
 </html>
